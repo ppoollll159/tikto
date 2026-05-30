@@ -1,155 +1,69 @@
-进口 反应, { useState } 从……起 'react';
+import React, { useState } from 'react';
+import './index.css';
 
-出口 默认 功能 TikTokRechargeSimulator() {
-  Const 包=[
-    { 硬币: 70, 价格: '$0.99' },
-    { 硬币: 350, 价格: '$4.99' },
-    { 硬币: 700, 价格: '$9.99' },
-    { 硬币: 1400, 价格: '$19.99' },
-    { 硬币: 3500, 价格: '$49.99' },
-    { 硬币: 7000, 价格: '$99.99' },
+export default function TikTokRechargeSimulator() {
+  const [coins, setCoins] = useState(0);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
+  const packages = [
+    { id: 1, coins: 100, price: 0.99 },
+    { id: 2, coins: 500, price: 4.99 },
+    { id: 3, coins: 1000, price: 9.99 },
+    { id: 4, coins: 5000, price: 49.99 },
   ];
 
-  Const fakeProgress=[
-    '正在连接到TikTok服务器...',
-    '正在验证付款方式...',
-    '正在处理充值...',
-    '正在更新硬币余额...',
-    '充值成功！'
-  ];
-
-  Const [挑选出来的, setSelected]=useState(null);
-  Const [装载, setLoading]=useState(假的);
-  Const [步, setStep]=useState(0);
-  Const [success, setSuccess]=useState(假的);
-  Const [硬币, setCoins]=useState(1280);
-
-  Const handleSelectPackage = (项)=>{
-    setSelected(项);
-setSuccess(假的)；
+  const handleRecharge = () => {
+    if (selectedPackage) {
+      setCoins(coins + selectedPackage.coins);
+      alert(`成功充值 ${selectedPackage.coins} 金币！`);
+    }
   };
 
-  Const handleRecharge=()=>{
-    如果 (！selected||正在加载) 返回;
-
-    setLoading(正确);
-setSuccess(假的)；
-setStep(0)；
-
-    let 当前=0;
-    Const 间隔=setInterval(()=>{
-当前++；
-      setStep(当前);
-
-      如果 (当前>=fakeProgress。长度 - 1) {
-        clearInterval(间隔);
-        setTimeout(()=>{
-          setCoins(上一个=>prev+已选择。硬币);
-          setLoading(假的);
-          setSuccess(正确);
-}, 800);
-      }
-}, 900);
+  const handleReset = () => {
+    setCoins(0);
+    setSelectedPackage(null);
   };
 
-  Const handleReset=()=>{
-setSelected(空)；
-    setLoading(假的);
-setStep(0)；
-    setSuccess(假的);
-  };
-
-  返回 (
-    <divclassName="min-h-screen bg-gradient-to-br从黑色通过-zinc-900到-zinc-800文本-白色弹性项目-中心对齐-中心p-6">
-      <divclassName="w-full max-w-5xl网格md：网格列-2间隙-6">
-        <divclassName="bg-zinc-900/80边框-zinc-700圆角-3xl P-8阴影-2xl背景-模糊">
-          <divclassName="flex items-center gap-4 mb-8">
-            <divclassName="w-14 h-14 rounded-2xl bg-white text-black flex items-center justify-center text-2xl font-bold">
-              ♪
-</div>
-            <div>
-              <h1 className="text-3xl字体-粗体">TikTok Recharge</h1>
-              <p className="text-zinc-400 text-sm">Demo Simulator Interface</p>
-</div>
-</div>
-
-          <div className="bg-zinc-800 rounded-2xl p-5 mb-6 border border-zinc-700">
-            <divclassName="text-sm text-zinc-400 mb-2">Current Balance</div>
-            <div className="text-4xl font-bold">🪙 {coins.功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 功能 function toLocaleString() { [native code] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [本机代码] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }() { [native code] }()}</div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {packages.地图((item)=>(
-              <按钮
-                钥匙={item.硬币}
-                onClick={()=>handleSelectPackage(item)}
-                className={`rounded-2xl border p-5 transition-all text-left ${
-                  selected?.硬币 === item.硬币
-                    ? 'border-pink-500 bg-pink-500/20 scale-105'
-                    : 'border-zinc-700 bg-zinc-800 hover:border-zinc-500'
-                }`}
-              >
-                <divclassName="text-2xl font-bold">🪙 {item.硬币}</div>
-<divclassName="text-zinc-400MT-1"MT-1">{项.价格}</div>{项.price}</div>
-</按钮>/按钮>
-            ))}
-</div>/div>
-
-          <按钮
-onClick={handleRecharge}={handleRecharge}
-禁用={！selected||正在加载}
-classname=w-完整mt-8py-4圆角-2xl字体-半粗体文本-lg bg-白色文本-黑色悬挂：比例-[1.01]穿透-全部禁止用：不透明度-40"
->
-{正在装货？ '正在处理... ' : '立即充值'}
-</按钮>
-
-          <按钮
-onClick={handleReset}
-            禁用={装载}{装载}
-className=w-full mt-4py-3圆角-2xl字体-中边框border-zinc-600悬停：边锌-400穿越-全部禁用：不透明-40"
->
-重置状态
-</按钮>
-</div>
-
-<divclassName="bg-zinc-900/80边框-zinc-700圆角-3xl P-8阴影-2xl背景-模糊弹性柱对齐-中间">
-          <div>
-            <H2className="text-2xl字体-粗体mb-6">充值状态</H2>
-
-<divclassName="空格-y-4">
-              {fakeProgress。地图((味精, 指数)=>(
-                <div
-                  钥匙={味精}
-                  className={'圆角-xl p-4边界过渡-全部${
-                    步 >=索引
-？'边界-绿-500bg-绿-500/10'
-：'border-zinc-700bg-zinc-800'
-}‘}
->
-                  <divclassName="弹性项目-居中对齐-介于">
-                    <跨度>{味精}</跨度>
-{步>=索引&&<跨度>✓</跨度>}{步骤>=索引&&<跨度>✓</跨度>}
-                  </div>
-</div>
-              ))}
-            </div>
-
-            {成功(&&S)选择(&&S)(
-              <divclassName="mt-8圆角-2xl边框-绿-500/10边框-绿-500P-5">
-                <divclassName="text-xl font-bold MB-2">充值完成</div>
-<divclassName="text-zinc-300">
-额外的<跨度className="font-bold">{挑选出来的。硬币}硬币</跨度>达到你的平衡。
-</div>
-</div>
-            )}
-          </div>
-
-          <divclassName="MT-10text-xs text-zinc-500border-t border-zinc-800PT-5行距-松弛">
-此页面仅为前端模拟演示。它不会连接到TikTok，
-处理实际支付，或与任何官方服务交互。
-</div></div>
-</div>/div>
-</div>/div>
-</div>/div>
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+      <h1 className="text-3xl font-bold text-gray-800 mb-8">TikTok 充值模拟器</h1>
+      <div className="bg-white rounded-lg shadow-md p-6 w-full max-w-md">
+        <div className="text-center mb-6">
+          <p className="text-lg text-gray-600">当前金币</p>
+          <p className="text-4xl font-bold text-blue-600">{coins}</p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {packages.map((pkg) => (
+            <button
+              key={pkg.id}
+              onClick={() => setSelectedPackage(pkg)}
+              className={`p-4 rounded-lg border-2 transition-all ${
+                selectedPackage?.id === pkg.id
+                  ? 'border-blue-500 bg-blue-50'
+                  : 'border-gray-200 hover:border-blue-300'
+              }`}
+            >
+              <p className="text-xl font-semibold text-gray-800">{pkg.coins} 金币</p>
+              <p className="text-gray-600">${pkg.price}</p>
+            </button>
+          ))}
+        </div>
+        <div className="flex gap-4">
+          <button
+            onClick={handleRecharge}
+            disabled={!selectedPackage}
+            className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
+          >
+            立即充值
+          </button>
+          <button
+            onClick={handleReset}
+            className="flex-1 bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+          >
+            重置
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
